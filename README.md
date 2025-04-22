@@ -186,4 +186,4 @@ Feel free to fork and contribute. PRs are welcome!
 
 Made with ❤️ by Prasanth
 
-For any queries, email: [[your-email@example.com](jprasanth7989@gmail.com)]
+For any queries, email: [[jprasanth7989@gmail.com]()]
