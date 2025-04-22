@@ -169,7 +169,10 @@ DELETE /api/admin/categories/1
 
 ## 🚧 To-Do List
 
--
+- [ ] Add more paginations and filtering options
+- [ ] Create a dedicated Product Microservice
+- [ ] Improve category response structure with full pagination metadata
+- [ ] Implement product count per category (future enhancement)
 
 ---
 
@@ -183,4 +186,4 @@ Feel free to fork and contribute. PRs are welcome!
 
 Made with ❤️ by Prasanth
 
-For any queries, email: [[your-email@example.com](mailto:your-email@example.com)]
+For any queries, email: [[your-email@example.com](jprasanth7989@gmail.com)]
