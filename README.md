@@ -19,6 +19,7 @@ This project is a backend REST API for an **E-commerce platform**, built with **
 - Update Category ✅
 - Delete Category ✅
 - DTO <-> Entity Mapping using ModelMapper ✅
+- Default Paginatination in Appconfig>AppConstants ✅
 
 ---
 
@@ -81,6 +82,16 @@ public class CategoryDTO {
     // Add productCount in the future
 }
 ```
+### AppConfig Enhancements
+Description: Configured application-wide settings.
+
+Changes:
+
+- Set up default pagination parameters.
+
+- Configured CORS settings to allow cross-origin requests.
+
+- Integrated Swagger for API documentation.
 
 ### 📄 CategoryResponse.java
 
@@ -148,6 +159,19 @@ POST /api/admin/categories
 
 ```
 GET /api/public/categories?pageNumber=0&pageSize=10
+{
+    "content": [
+        {
+            "categoryid": 1,
+            "categoryName": "defddewffewwfdvfefeeeffefew3fgwcegfgfewf"
+        }
+    ],
+    "pageNumber": 0,
+    "pageSize": 50,
+    "totalElements": 1,
+    "totalPages": 1,
+    "lastPage": true
+}
 ```
 
 ### Update Category (PUT)
