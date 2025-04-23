@@ -18,8 +18,11 @@ This project is a backend REST API for an **E-commerce platform**, built with **
 - Get All Categories with Pagination ✅
 - Update Category ✅
 - Delete Category ✅
-- DTO <-> Entity Mapping using ModelMapper ✅
-- Default Paginatination in Appconfig>AppConstants ✅
+- DTO ↔ Entity Mapping using ModelMapper ✅
+- Default Pagination in `AppConfig` > `AppConstants` ✅
+- Integrated Swagger API documentation ✅
+- Configured CORS for cross-origin requests ✅
+
 
 ---
 
@@ -193,10 +196,6 @@ DELETE /api/admin/categories/1
 
 ## 🚧 To-Do List
 
-- [ ] Add more paginations and filtering options
-- [ ] Create a dedicated Product Microservice
-- [ ] Improve category response structure with full pagination metadata
-- [ ] Implement product count per category (future enhancement)
 
 ---
 
