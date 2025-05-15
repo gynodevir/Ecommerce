@@ -5,4 +5,5 @@ public class AppConstans {
     public static final String PAGE_SIZE="50";
     public static final String SORT_CATEGORY_BY = "categoryid";
     public static final String SORT_DIR = "asc";
+    public static final String SORT_PRODUCT_BY = "productId";
 }
