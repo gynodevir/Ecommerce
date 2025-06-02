@@ -70,4 +70,6 @@ public class User {
     private Set<Product> products;
 
 
+    public User(@NotBlank @Size(min = 3, max = 20) String username, @NotBlank @Size(max = 50) @Email String email, String encode) {
+    }
 }
