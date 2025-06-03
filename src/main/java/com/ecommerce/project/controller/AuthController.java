@@ -1,13 +1,12 @@
 package com.ecommerce.project.controller;
-import com.ecommerce.project.Repositories.RoleRepository;
-import com.ecommerce.project.Repositories.UserRepository;
+
 import com.ecommerce.project.model.AppRole;
 import com.ecommerce.project.model.Role;
 import com.ecommerce.project.model.User;
-
+import com.ecommerce.project.Repositories.RoleRepository;
+import com.ecommerce.project.Repositories.UserRepository;
 import com.ecommerce.project.security.jwt.JwtUtils;
-import com.ecommerce.project.security.jwt.LoginRequest;
-
+import com.ecommerce.project.security.request.LoginRequest;
 import com.ecommerce.project.security.request.SignupRequest;
 import com.ecommerce.project.security.response.MessageResponse;
 import com.ecommerce.project.security.response.UserInfoResponse;
@@ -29,9 +28,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 @RestController
 @RequestMapping("/api/auth")
 public class AuthController {
+
     @Autowired
     private JwtUtils jwtUtils;
 
@@ -78,7 +79,7 @@ public class AuthController {
 
     @PostMapping("/signup")
     public ResponseEntity<?> registerUser(@Valid @RequestBody SignupRequest signUpRequest) {
-        if (userRepository.existingByUserName(signUpRequest.getUsername())) {
+        if (userRepository.existsByUserName(signUpRequest.getUsername())) {
             return ResponseEntity.badRequest().body(new MessageResponse("Error: Username is already taken!"));
         }
 

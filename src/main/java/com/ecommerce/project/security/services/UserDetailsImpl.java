@@ -17,16 +17,16 @@ import java.util.stream.Collectors;
 public class UserDetailsImpl implements UserDetails {
     private static final long serialVersionUID=1L;
     private long id;
-    private String uername;
+    private String username;
     private String email;
     @JsonIgnore
     private String password;
     private Collection<? extends GrantedAuthority> authorities;
 
-    public UserDetailsImpl(long id, String uername, String email, String password,
+    public UserDetailsImpl(long id, String username, String email, String password,
                            Collection<? extends GrantedAuthority> authorities) {
         this.id = id;
-        this.uername = uername;
+        this.username = username;
         this.email = email;
         this.password = password;
         this.authorities = authorities;
@@ -37,7 +37,7 @@ public class UserDetailsImpl implements UserDetails {
                 .collect(Collectors.toList());
         return new UserDetailsImpl(
                 user.getUserId(),
-                user.getUsername(),
+                user.getUserName(),
                 user.getEmail(),
                 user.getPassword(),
                 authorities
@@ -56,7 +56,7 @@ public class UserDetailsImpl implements UserDetails {
 
     @Override
     public String getUsername() {
-        return getUsername();
+        return this.username;
     }
 
     @Override
