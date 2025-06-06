@@ -7,4 +7,7 @@ import org.springframework.data.jpa.repository.Query;
 public interface CartRepository extends JpaRepository<Cart,Long> {
     @Query("SELECT c from Cart c where c.user.email=?1")
     Cart findCartByEmail(String email);
+
+    @Query("SELECT c from Cart c where c.user.email=?1 AND c.id=?2")
+    Cart findCardByEmailAndCartId(String emailId, Long cartId);
 }
