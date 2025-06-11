@@ -16,21 +16,21 @@ import org.springframework.stereotype.Service;
 public class Payment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long payementId;
+    private Long paymentId;
     @OneToOne(mappedBy = "payment",cascade = {CascadeType.PERSIST,CascadeType.MERGE})
     private Order order;
 
     @NotBlank
     @Size(min=4,message = "Payment method must be 4 characters")
-    private String paymentMenthod;
+    private String paymentMethod;
 
     private String pgPaymentId;
     private String pgStatus;
     private String pgResponseMessage;
     private String pgName;
 
-    public Payment(Long payementId,String pgPaymentId,String pgStatus,String pgResponseMessage,String pgName){
-        this.payementId=payementId;
+    public Payment(String paymentMenthod,String pgPaymentId,String pgStatus,String pgResponseMessage,String pgName){
+        this.paymentMethod=paymentMenthod;
         this.pgPaymentId=pgPaymentId;
         this.pgStatus=pgStatus;
         this.pgResponseMessage=pgResponseMessage;
