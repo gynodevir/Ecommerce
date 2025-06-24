@@ -43,6 +43,8 @@ public class ProductServiceImp implements ProductService{
 
     @Value("${project.image}")
     private String path;
+    @Value("${image.base.url}")
+    private String imageBaseUrl;
 
 
 
@@ -87,7 +89,12 @@ public class ProductServiceImp implements ProductService{
 
         List<Product> products=pageProducts.getContent();
         List<ProductDTO> productDTOS=products.stream()
-                .map(product -> modelMapper.map(product,ProductDTO.class))
+                .map(product -> {
+                   ProductDTO productDTO= modelMapper.map(product,ProductDTO.class);
+                   productDTO.setImage(constructImageurl(product.getImage()));
+                   return productDTO;
+                })
+
                 .toList();
         ProductResponse productResponse=new ProductResponse();
         productResponse.setContent(productDTOS);
@@ -97,6 +104,9 @@ public class ProductServiceImp implements ProductService{
         productResponse.setTotalPages(pageProducts.getTotalPages());
         productResponse.setLastPage(pageProducts.isLast());
         return productResponse;
+    }
+    public String constructImageurl(String imageName){
+        return imageBaseUrl.endsWith("/") ? imageBaseUrl+imageName :imageBaseUrl+ "/"+imageName;
     }
 
     @Override
