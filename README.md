@@ -181,6 +181,11 @@ DELETE /api/admin/categories/1
 Feel free to fork and contribute. PRs are welcome!
 
 ---
+## API Documentation
+
+The complete API documentation is available on Postman:
+
+👉 [View API Documentation on Postman](https://documenter.getpostman.com/view/17775814/2sB2x5HsbQ#259b27ef-6315-4b4a-962d-09a7d371c086)
 
 ## 📩 Contact
 
